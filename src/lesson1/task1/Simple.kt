@@ -2,6 +2,7 @@
 
 package lesson1.task1
 
+import lesson2.task1.gradeNotation
 import kotlin.math.*
 
 /**
@@ -49,8 +50,8 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+    val a = thirdDigit(3801)
+    println("Оценка: $a")
 }
 
 /**
@@ -97,7 +98,7 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double {
  * Пользователь задает целое число, большее 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int = (number / 100) % 10
 
 /**
  * Простая
@@ -106,7 +107,8 @@ fun thirdDigit(number: Int): Int = TODO()
  * прибыл на станцию назначения в h2 часов m2 минут того же дня (например в 13:01).
  * Определите время поезда в пути в минутах (в данном случае 216).
  */
-fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = TODO()
+fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int =
+    (hoursArrive * 60 + minutesArrive) - (hoursDepart * 60 + minutesDepart)
 
 /**
  * Простая
@@ -115,7 +117,12 @@ fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minute
  * Сколько денег будет на счету через 3 года (с учётом сложных процентов)?
  * Например, 100 рублей под 10% годовых превратятся в 133.1 рубля
  */
-fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
+fun accountInThreeYears(initial: Int, percent: Int): Double {
+    val a1 = (initial + initial * percent / 100.0)
+    val a2 = a1 + a1 * percent / 100.0
+    val a = a2 + a2 * percent / 100.0
+    return a
+}
 
 /**
  * Простая
@@ -123,4 +130,6 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int {
+    return ((number % 10) * 100) + (((number / 10) % 10) * 10) + (number / 100)
+}
