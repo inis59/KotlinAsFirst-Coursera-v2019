@@ -12,7 +12,7 @@ import kotlin.math.*
  */
 fun main() {
     val a = triangleKind(4.0, 3.0, 2.0)
-    println("Оценка: $a")
+    println("Оценкyyyyа: $a")
 }
 
 /**

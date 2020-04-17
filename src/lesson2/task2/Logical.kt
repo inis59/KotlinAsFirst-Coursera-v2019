@@ -68,12 +68,12 @@ fun circleInside(
  * Вернуть true, если кирпич пройдёт
  */
 fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
-    val max1 = max(max(a, b), c)
+    val max = max(max(a, b), c)
     var result: Boolean = false
-    if (max1 == a) {
+    if (max == a) {
         if ((b <= r && c <= s) || (b <= s && c <= r))
             result = true
-    } else if (max1 == b) {
+    } else if (max == b) {
         if ((a <= r && c <= s) || (a <= s && c <= r))
             result = true
     } else {
