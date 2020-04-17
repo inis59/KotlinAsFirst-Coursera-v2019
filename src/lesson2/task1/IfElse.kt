@@ -76,13 +76,11 @@ fun ageDescription(age: Int): String {
     var result: String = ""
     var k1: Int = 0
     var k2: Int = 0
-//    for (i in 0..age) {
     if (age < 10) k1 = age
     else if (age < 100) {
         k1 = age % 10
         k2 = age
-    }
-    else {
+    } else {
         k1 = age % 10
         k2 = age % 100
     }
